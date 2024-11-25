@@ -5,7 +5,7 @@ export default function guardrail(func) {
     queue.push('Guardrail was processed');
     return queue;
   } catch (err) {
-    queue.push(err.message);
+    queue.push(String(err));
     queue.push('Guardrail was processed');
     return queue;
   }
