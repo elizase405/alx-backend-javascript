@@ -8,6 +8,6 @@ export default async function asyncUploadUser() {
     data2 = await createUser();
     return { photo: data1, user: data2 };
   } catch (err) {
-    return { photo: data1, user: data2 };
+    return { photo: null, user: null };
   }
 }
