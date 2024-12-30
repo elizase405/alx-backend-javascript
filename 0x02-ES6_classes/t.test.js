@@ -1,11 +1,11 @@
-import HolbertonCourse from "./2-hbtn_course.js";
+import Currency from './3-currency.js';
+import Pricing from './4-pricing.js';
 
-test("HolbertonCourse setters are implemented correctly", () => {
-    const course = new HolbertonCourse("PHP", 20, ["Lucie", "Guillaume"]);
-    course.name = "PHP2";
-    course.length = 10;
-    course.students = ["Thomas"];
-    expect(course.name).toBe("PHP2");
-    expect(course.length).toBe(10);
-    expect(course.students).toEqual(["Thomas"]);
+const dollar = new Currency('$', 'Dollars');
+
+test("Pricing is implemented correctly", () => {
+    const price = new Pricing(100, dollar);
+    expect(price.amount).toBe(100);
+    expect(price.currency).toBe(dollar);
+    expect(price.displayFullPrice()).toBe('100 Dollars ($)');
 });
